@@ -35,7 +35,7 @@ From package.json:
 {
   "dependencies": {
     "browserify": "^8.0.3"
-  }
+  },
   "scripts": {
     "build": "./node_modules/.bin/glob-run ./node-modules/.bin/browserify src/\\*.js dist/\\*js"
   }
