@@ -1,6 +1,6 @@
 {
   "name": "glob-run",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Run multiple commands by glob patterns sequentially.",
   "homepage": "https://github.com/fahad19/glob-run",
   "author": {
@@ -17,7 +17,9 @@
     "script",
     "command",
     "cli",
-    "utility"
+    "utility",
+    "glob",
+    "patterns"
   ],
   "dependencies": {
     "async": "^0.9.0",
