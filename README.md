@@ -34,6 +34,7 @@ From package.json:
 ```json
 {
   "dependencies": {
+    "glob-run": "^0.1.3",
     "browserify": "^8.0.3"
   },
   "scripts": {
