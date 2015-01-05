@@ -1,0 +1,32 @@
+#!/usr/bin/env node
+
+'use strict';
+
+var async = require('async');
+
+var command = process.argv.slice(2);
+if (command.length === 0) {
+	return console.log('No command given to run.');
+}
+
+var cmd = command.join(' ');
+var lib = require('../');
+var commands = lib(cmd);
+
+var sys = require('sys');
+var exec = require('child_process').exec;
+
+async.series(commands.map(function (command) {
+	return function (callback) {
+		exec(command, function (error, stdout, stderr) {
+			sys.print(stdout);
+			sys.print(stderr);
+
+			if (error !== null) {
+				console.log('exec error: ' + error);
+			}
+
+			callback();
+		});
+	};
+}));
