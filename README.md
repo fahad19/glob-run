@@ -14,6 +14,10 @@ Basic example:
 
     $ glob-run cat src/\*.js
 
+This is equivalent to running:
+
+    $ cat src/a.js && cat src/b.js && cat src/c.js
+
 With [Browserify](https://www.npmjs.com/package/browserify):
 
     # src/a.js will be bundled into dist/a.js
