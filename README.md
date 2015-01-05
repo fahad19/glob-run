@@ -17,7 +17,7 @@ Basic example:
 With [Browserify](https://www.npmjs.com/package/browserify):
 
     # src/a.js will be bundled into dist/a.js
-    $ glob-run browserify src/\*.js -o dist/bundle.js
+    $ glob-run browserify src/\*.js -o dist/\*.js
 
     # src/a.coffee will be bundled into a.js
     $ glob-run browserify -t coffeeify src/\*.coffee -o dist/\*.js
