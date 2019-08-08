@@ -29,12 +29,12 @@
     "browserify": "^16.4.0",
     "jshint": "^2.10.2",
     "mocha": "^6.2.0",
-    "run-scripts": "^0.1.6"
+    "npm-run-all": "^4.1.5"
   },
   "scripts": {
     "lint": "jshint *.js test/*.js bin/*",
     "mocha": "mocha test/*.js",
-    "test": "run-scripts lint mocha test-browserify",
+    "test": "run-s lint mocha test-browserify",
     "test-browserify": "./bin/glob-run browserify test/fixtures/\\*.js -o test/fixtures/test_build/\\*.js"
   }
 }
