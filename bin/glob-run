@@ -19,7 +19,7 @@ var exec = require('child_process').exec;
 async.series(commands.map(function (command) {
 	return function (callback) {
 		sys.print('>> ' + command + '\n');
-		exec(command, function (error, stdout, stderr) {
+		var cp = exec(command, function (error, stdout, stderr) {
 			sys.print(stdout);
 			sys.print(stderr);
 
@@ -28,6 +28,10 @@ async.series(commands.map(function (command) {
 			}
 
 			callback();
+		});
+
+		process.on('exit', function() {
+			cp.kill('SIGHUP');
 		});
 	};
 }));
