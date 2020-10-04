@@ -16,7 +16,8 @@ module.exports = function (run) {
 	}
 
 	// find by pattern
-	var runE = run.split(' ');
+	var runParameters = run.split('"');
+	var runE = (runParameters.map(p => p.split(' '))).flat().filter(p => p);
 	var patternAt = null;
 	var pattern = null;
 	var lastPatternAt = null;
@@ -50,6 +51,9 @@ module.exports = function (run) {
 
 			command[lastPatternAt] = command[lastPatternAt].replace('*', filename);
 		}
+
+		// escape commands that contain whitespaces or backslashs (#7)
+		command = command.map(c => /[\s\\]/g.test(c) ? ('"' + c + '"') : c);
 
 		command = command.join(' ');
 		commands.push(command);

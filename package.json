@@ -33,7 +33,7 @@
   },
   "scripts": {
     "lint": "jshint *.js test/*.js bin/*",
-    "mocha": "mocha test/*.js",
+    "mocha": "mocha test/*.test.js",
     "test": "run-s lint mocha test-browserify",
     "test-browserify": "./bin/glob-run browserify test/fixtures/\\*.js -o test/fixtures/test_build/\\*.js"
   }
