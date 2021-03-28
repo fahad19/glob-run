@@ -11,6 +11,9 @@
   "repository": "fahad19/glob-run",
   "license": "MIT",
   "bin": "./bin/glob-run",
+  "engines": {
+    "node": ">= 10.12.0"
+  },
   "keywords": [
     "npm",
     "scripts",
