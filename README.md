@@ -4,7 +4,7 @@
 
 ## Install
 
-Needs `node >= 10.12`.
+Needs `node >= 12.0`.
 
 ```sh
 $ npm install -g glob-run
