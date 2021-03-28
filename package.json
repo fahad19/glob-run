@@ -11,6 +11,9 @@
   "repository": "fahad19/glob-run",
   "license": "MIT",
   "bin": "./bin/glob-run",
+  "engines": {
+    "node": ">= 12.0.0"
+  },
   "keywords": [
     "npm",
     "scripts",
@@ -22,19 +25,19 @@
     "patterns"
   ],
   "dependencies": {
-    "async": "^3.1.0",
-    "glob": "^7.1.4"
+    "async": "^3.2.0",
+    "glob": "^7.1.6"
   },
   "devDependencies": {
-    "browserify": "^16.4.0",
-    "jshint": "^2.10.2",
-    "mocha": "^6.2.0",
+    "browserify": "^17.0.0",
+    "jshint": "^2.12.0",
+    "mocha": "^8.3.2",
     "npm-run-all": "^4.1.5"
   },
   "scripts": {
-    "lint": "jshint *.js test/*.js bin/*",
-    "mocha": "mocha test/*.js",
     "test": "run-s lint mocha test-browserify",
+    "lint": "jshint *.js test/*.js bin/*",
+    "mocha": "mocha test/*.test.js",
     "test-browserify": "./bin/glob-run browserify test/fixtures/\\*.js -o test/fixtures/test_build/\\*.js"
   }
 }
